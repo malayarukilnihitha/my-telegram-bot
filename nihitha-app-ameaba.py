@@ -29,3 +29,9 @@ def dog(bot,update):
 
 u=Updater('1235520242:AAF6YyIZNOfj3jU7dkBOaUFM-udZYg3oRB4')
 dp=u.dispatcher
+dp.add_handler(CommandHandler('turnoffthelight',turnoffthelight))
+dp.add_handler(CommandHandler('turnonthelight',turnonthelight))
+dp.add_handler(CommandHandler('start',start))
+dp.add_handler(Message(Filters.text &(~Filters.command),input_message))
+u.start_polling()
+u.idle()
